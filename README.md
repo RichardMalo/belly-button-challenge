@@ -44,6 +44,3 @@ Metadata initializes without error (10 points)
 Metadata updates when a new sample is selected (10 points)
 
 App Successfully Deployed to Github Pages (10 points)
-
-Grading
-This assignment will be evaluated against the requirements and assigned a grade according to the following table:
