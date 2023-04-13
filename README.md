@@ -9,7 +9,7 @@ index.html - the webpage displaying the website
 The remainder of the files and images are from the Starter file.
 
 Github Pages address: 
-rolosaregood.github.io/belly-button-challenge
+URL: https://rolosaregood.github.io/belly-button-challenge 
 
 Requirements:
 Bar Chart (30 points)
