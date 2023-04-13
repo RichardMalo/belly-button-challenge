@@ -22,7 +22,7 @@ d3.json(url).then(function(data) {
 function optionChanged(value){
   panelUpdate(value);
   // I ran out of time to make this work tonight before the assignment was due. Did not quite work.
-  // plotGuage(value);
+  plotGuage(value);
   graphUpdate(value);
 };
 
@@ -128,25 +128,29 @@ function graphUpdate(value){
   
 // I ran out of time to make this work tonight before the assignment was due. Did not quite work.
 
-  // function plotGuage(value) {
-  //   d3.json(url).then(function(data) { 
-  //     let metadata = data.metadata;
-  //     // Filter the metadata array to obtain the object with the "id" attribute matching the "value" parameter passed to the function.
-  //     let results = metadata.filter(metaid => metaid.id == value);
-  //     console.log("RESULTS: ",results)
-  //     // Selecting the first object so that the single object matches the id value.
-  //     let result = results["wfreq"];
-  //     console.log("Result2:", result);
-  //     let dataGuage = [{domain: { x: [0, 1], y: [0, 1] },
-  //       value: result,
-  //       title: { text: "Number of Washes" },
-  //       type: "indicator",
-  //       mode: "gauge+number"
-  //     }
-  //   ];
+  function plotGuage(value) {
+    d3.json(url).then(function(data) { 
+      let metadata = data.metadata;
+      // Filter the metadata array to obtain the object with the "id" attribute matching the "value" parameter passed to the function.
+      let results = metadata.filter(metaid => metaid.id == value);
+      console.log("RESULTS: ",results)
+      // Selecting the first object so that the single object matches the id value.
+      let result = results["wfreq"];
+      console.log("Result2:", result);
+      let dataGuage = [{domain: { x: [0, 1], y: [0, 1] },
+        value: result,
+        title: { text: "Number of Washes" },
+        type: "indicator",
+        mode: "gauge+number"
+      }
+    ];
   
-  //   var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
-  //   Plotly.newPlot('gauge', dataGuage, layout);
-  // })};
+    var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+    Plotly.newPlot('gauge', dataGuage, layout);
+  })};
+  
+  function init() { panelUpdate('940'); graphUpdate('940'); } 
+  
+  init() 
 
   
